@@ -83,7 +83,11 @@ Skallywag ships pointed at a **local** model through Ollama, so it works offline
 |---|---|---|
 | Local (default) | `LLM_BACKEND=local`, `LLM_MODEL=qwen2.5:7b` | Offline. Speed depends on your machine. |
 | Groq (free tier) | `LLM_BACKEND=groq`, `GROQ_API_KEY=...` | Default model `openai/gpt-oss-120b`. Fast. Rate-limited on the free tier. |
+| Muse Glimmer (local) | `LLM_MODEL=muse-glimmer` | Meta's 30B agent model, Apache 2.0, `ollama pull muse-glimmer`. Needs a 24 GB GPU or a 32 GB Apple Silicon Mac to be quick; runs on CPU otherwise, slowly. |
+| Swarm | `LLM_SPEC=swarm:cascade:local:qwen2.5:7b,groq:openai/gpt-oss-120b` | One master, several models: `cascade` asks the first model and escalates only when its answer is not decisive; `vote` asks every member in parallel and takes the majority tool call. Members are any `local:` or `groq:` spec. |
 | Claude, OpenAI, Gemini, xAI | API key for the provider | Pay per token with the provider's **API key**. Consumer subscriptions (Claude Max, ChatGPT plans) are not usable from third-party tools under those services' terms. |
+
+**Voice.** Put `ELEVENLABS_API_KEY=` (free key) in `agent/.env` and Skallywag talks back in a gravelly premade voice; `SKW_VOICE_ID=` picks any voice from your ElevenLabs account, `/voice off` at the chat bar mutes it.
 
 Deepest integration: Claude through Claude Code with the AbletonBridge MCP and the template skill in this repo. The Skallywag drive edition (limited run) ships a model fine-tuned on this exact tool set and template so it runs reliably at small size, offline.
 
