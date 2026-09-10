@@ -1,0 +1,9 @@
+{
+  "name": "skallywag-setup",
+  "version": "1.0.0",
+  "description": "Installer for Skallywag, an AI first mate inside Ableton Live: dependencies, the free Lite device, Claude Code channel agents and the template skill.",
+  "bin": { "skallywag-setup": "bin/skallywag-setup.js" },
+  "repository": { "type": "git", "url": "https://github.com/Moonwolf711/skallywag.git" },
+  "license": "MIT",
+  "private": false
+}
