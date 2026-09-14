@@ -93,7 +93,9 @@ Skallywag ships pointed at a **local** model through Ollama, so it works offline
 | Swarm | `LLM_SPEC=swarm:cascade:local:qwen2.5:7b,groq:openai/gpt-oss-120b` | One master, several models: `cascade` asks the first model and escalates only when its answer is not decisive; `vote` asks every member in parallel and takes the majority tool call. Members are any `local:` or `groq:` spec. |
 | Claude, OpenAI, Gemini, xAI | API key for the provider | Pay per token with the provider's **API key**. Consumer subscriptions (Claude Max, ChatGPT plans) are not usable from third-party tools under those services' terms. |
 
-**Voice.** Put `ELEVENLABS_API_KEY=` (free key) in `agent/.env` and Skallywag talks back in a gravelly premade voice; `SKW_VOICE_ID=` picks any voice from your ElevenLabs account, `/voice off` at the chat bar mutes it.
+**Voice.** Davy talks back. Offline by default: `agent/voice/get-voice.bat` fetches a small speech engine (qwentts.cpp, MIT; Vulkan on AMD, Intel or NVIDIA, CPU otherwise) and the Qwen3-TTS model (Apache-2.0), and `make-voice.bat clip.wav name` clones a voice you have the right to use from a 15–30 s recording. ElevenLabs stays optional: `ELEVENLABS_API_KEY=` in `agent/.env`, `SKW_VOICE_ID=` for a voice from your account. `/voice off` mutes him.
+
+**Eyes.** Live exposes no hover and no Info View text to plugins, so Davy has his own: `agent/eyes/get-eyes.bat` fetches llama.cpp (MIT) and Qwen3-VL (Apache-2.0, 2B for 8 GB cards, `get-eyes.bat big` for the 4B). `/look` reads the device view at native resolution: plugin GUIs, knob values, error text. Point at any control and press **Ctrl+Alt+E**: Davy names it, looks it up in his help book and explains it out loud. When a question depends on what is on screen ("what's that dialog?") the brain calls the eyes itself. Screenshots never leave your machine; the model loads on the first look and closes after 90 s idle so the voice keeps the GPU.
 
 Deepest integration: Claude through Claude Code with the AbletonBridge MCP and the template skill in this repo. The Skallywag drive edition (limited run) ships a model fine-tuned on this exact tool set and template so it runs reliably at small size, offline.
 
@@ -106,6 +108,8 @@ The first time the device opens it asks four quick questions: how many years you
 An 8-bit pirate lives in the device panel with a thought bubble. Hover his controls and he explains them. Click any knob or device in Live, then type `/explain` (or click Davy) and he dictates a proper note on it: what it does, how it behaves as you move it, one practical tip, spoken aloud when a voice is on. Ableton exposes no hover or Info View text to plugins, so this is click-driven by design and goes deeper than the built-in info box.
 
 Every stock Live 12 device and parameter ships with a note in `agent/help.json`. Anything Davy does not know, third-party plugins included, he works out from the device type and the generic meaning of the control, writes a note, saves it, and knows it next time. Hand-written notes in that file are never overwritten.
+
+Ask him for a banger and he needles you for it — "Sounds like ye haven't sailed the seven seas yet. Pollywogs point at a channel and count bars" — and still tells you exactly what he needs: the channel, the bars, the move.
 
 ## Your template, mapped
 
