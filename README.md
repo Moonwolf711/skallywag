@@ -2,6 +2,8 @@
 
 **An AI first mate that lives in the channel bar of every lane in Ableton Live.**
 
+![Skallywag at the chat bar: a vague prompt refused, then a concrete move, a question, and a mixer move, all from real replies](docs/skallywag-demo.gif)
+
 Skallywag is a Max for Live device plus a small local agent. You type or say a concrete move and it writes the MIDI, builds and loops the clip, loads sounds from *your* Live browser, sets plugin parameters, drives the mixer, fires scenes. It runs on your own machine: no account, no API key, works offline.
 
 > The captain isn't always steering. Your first mate takes the order and turns the wheel. Skallywag is the first mate.
