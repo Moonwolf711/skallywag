@@ -4,7 +4,7 @@
 
 ![Skallywag at the chat bar: a vague prompt refused, then a concrete move, a question, and a mixer move, all from real replies](docs/skallywag-demo.gif)
 
-Skallywag is a Max for Live device plus a small local agent. You type or say a concrete move and it writes the MIDI, builds and loops the clip, loads sounds from *your* Live browser, sets plugin parameters, drives the mixer, fires scenes. It runs on your own machine: no account, no API key, works offline.
+Skallywag is a Max for Live device plus a small local agent. You type or say a concrete move and it writes the MIDI, builds and loops the clip, drops it on the Arrangement timeline at the bar you name, sets plugin parameters, drives the mixer, fires scenes. Every move is narrated in plain words with a lane emoji ("🥁 Doing the drums on KICK, channel 4") instead of raw code. It runs on your own machine: no account, no API key, works offline.
 
 > The captain isn't always steering. Your first mate takes the order and turns the wheel. Skallywag is the first mate.
 
@@ -100,6 +100,12 @@ Deepest integration: Claude through Claude Code with the AbletonBridge MCP and t
 ## Who is on deck
 
 The first time the device opens it asks four quick questions: how many years you have been producing, whether you run stock, third-party or hybrid plugins, whether you master your own tracks, and whether you start from a template. The answers stay on your machine and tune the first mate: a beginner who is vague gets one concrete example of what to say inside the refusal, a 10-year producer gets one terse line, third-party users get a plugin's parameters read before any is set, and producers who send their tracks out never get the master bus touched unasked. `/intro` asks again.
+
+## Davy, the first mate
+
+An 8-bit pirate lives in the device panel with a thought bubble. Hover his controls and he explains them. Click any knob or device in Live, then type `/explain` (or click Davy) and he dictates a proper note on it: what it does, how it behaves as you move it, one practical tip, spoken aloud when a voice is on. Ableton exposes no hover or Info View text to plugins, so this is click-driven by design and goes deeper than the built-in info box.
+
+Every stock Live 12 device and parameter ships with a note in `agent/help.json`. Anything Davy does not know, third-party plugins included, he works out from the device type and the generic meaning of the control, writes a note, saves it, and knows it next time. Hand-written notes in that file are never overwritten.
 
 ## Your template, mapped
 
