@@ -97,6 +97,12 @@ Skallywag ships pointed at a **local** model through Ollama, so it works offline
 
 Deepest integration: Claude through Claude Code with the AbletonBridge MCP and the template skill in this repo. The Skallywag drive edition (limited run) ships a model fine-tuned on this exact tool set and template so it runs reliably at small size, offline.
 
+## Your template, mapped
+
+Skallywag ships knowing the THIS IS THE WAY layout, but it can learn yours. Type `/map` at the chat bar and it reads the set that is open through the device: every lane with its type, its inferred role (kick, snare/clap, hats, sub bass, pad, vocal, riser, reference...), the group it sits in, its device chain, the returns, the locators and the tempo. From then on "the sub" or "the kick lane" resolves without a lookup, and the map is saved under `agent/sets/` so `SKW_SET_MAP=sets/<name>.json` in `agent/.env` loads it at startup.
+
+A Live set or template file works too, offline: `/map C:\path	o\MyTemplate.als` parses the gzipped XML directly. `/map show` prints the map, `/map off` drops it, `/map name <text>` renames it. The generic tools keep reading live indices, so a slightly stale map never breaks a move.
+
 ## The template
 
 The paid bundle includes the **THIS IS THE WAY** Live set. The layout, so the agents and skill make sense:
