@@ -21,6 +21,10 @@ Skallywag is built for producers who already know the tools and the tactics. Vag
 
 Missing one detail and it asks one question. Missing the idea and it sends you back to the drawing board.
 
+Inside Live, on a lane, for real: tempo, a chord into a clip slot, then a Glue Compressor threshold found by reading the device chain first, then a vague prompt bounced.
+
+![Skallywag inside Ableton Live: typed into the device on the first track, it sets the tempo, writes a C minor chord into slot 1, reads the device chain and moves the Glue Compressor threshold to -20 dB, then refuses a vague prompt](docs/skallywag-in-live.gif)
+
 **No AI-generated music. None.** Skallywag never generates a sound. It moves your sounds, writes the notes you asked for, and loads from your library. The idea is still yours. The hands are still yours.
 
 ## What's in this repo (free)
